@@ -1,2 +1,12 @@
-<h1>Billboards#show</h1>
-<p>Find me in app/views/billboards/show.html.erb</p>
+<h1 class="ui header"><%= @bill.billboard_name %></h1>
+<% @songlist = [] %>
+
+<% 100.times do  %>
+    <% @songlist << Song.find(rand(1..1250)) %>
+<% end %>
+
+<ol>
+  <% @songlist.each do |song| %>
+    <li><%= song.song_title  %> by <%= Artist.find(song.artist_id).artist_name %></li>
+  <% end %>
+</ol>

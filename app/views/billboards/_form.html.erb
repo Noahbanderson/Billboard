@@ -1,0 +1,7 @@
+<%= form_with(model: billboard, local: true, class: "ui form") do |f| %>
+  <div class="field">
+    <%= f.label "New Billboard Name"  %>
+    <%= f.text_field :billboard_name , required: true, placeholder: "Billboard Name" %>
+    <%= f.submit class: "ui button" %>
+  </div>
+<% end %>

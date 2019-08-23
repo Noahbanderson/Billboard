@@ -12,6 +12,8 @@ gem 'webpacker', '~> 4.0'
 gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'semantic-ui-sass'
+gem 'rspotify'
+
 
 group :development, :test do
   gem 'pry-rails'
