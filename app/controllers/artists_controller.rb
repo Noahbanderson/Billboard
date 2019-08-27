@@ -2,7 +2,7 @@ class ArtistsController < ApplicationController
   before_action :set_artist, only: [:show, :edit, :update, :destroy]
 
   def index
-    @arts = Artist.all
+    @arts = current_user.artists
   end
 
   def show
@@ -10,11 +10,11 @@ class ArtistsController < ApplicationController
 
   def new
     @art = Artist.new
-    #render partial: "form", artist: @art #! i tried running this, but styling wouldn't carry... if this succeedd, i could have deleted the new&edit.html.erb files and dried it up more...
+    render :template => "artists/_form"
   end
 
   def create
-    @art = Artist.new(artist_params)
+    @art = current_user.artists.new(artist_params)
 
     if @art.save
       redirect_to artists_path
@@ -24,6 +24,7 @@ class ArtistsController < ApplicationController
   end
   
   def edit
+    render :template => "artists/_form"
   end
 
   def update
@@ -41,7 +42,7 @@ class ArtistsController < ApplicationController
 
   private
     def set_artist
-      @art = Artist.find(params[:id])
+      @art = current_user.artists.find(params[:id])
     end
 
     def artist_params

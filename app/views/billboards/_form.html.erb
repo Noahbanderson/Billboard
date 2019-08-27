@@ -1,7 +1,11 @@
-<%= form_with(model: billboard, local: true, class: "ui form") do |f| %>
+<h1><%= @bill.id ? "Edit Billboard Title" : "Create New Billboard" %></h1>
+<hr />
+<%= form_with(model: @bill, local: true, class: "ui form") do |f| %>
   <div class="field">
     <%= f.label "New Billboard Name"  %>
     <%= f.text_field :billboard_name , required: true, placeholder: "Billboard Name" %>
     <%= f.submit class: "ui button" %>
   </div>
 <% end %>
+<hr />
+<%= link_to 'Return', billboards_path, class: "ui blue button"%>

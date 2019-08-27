@@ -1,9 +1,9 @@
-<h1><%= song.id ? "Edit Song Title" : "Create New Song" %></h1>
+<h1><%= @song.id ? "Edit Song Title" : "Create New Song" %></h1>
 <hr />
-<%= form_with(model: [artist, song], local: true, class: "ui form") do |f|%>
+<%= form_with(model: [@art, @song], local: true, class: "ui form") do |f|%>
   <div class="field">
     <%= f.label :song_title %>
-    <%= f.text_field :song_title, required: true, placeholder: song.song_title, autofocus: true %>
+    <%= f.text_field :song_title, required: true, placeholder: @song.song_title, autofocus: true %>
     <%= f.submit class:"ui green button" %>
   </div>
 <% end %>

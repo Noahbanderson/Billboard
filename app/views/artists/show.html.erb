@@ -5,6 +5,8 @@
     <span>
       <%= link_to 'Edit Song Title', edit_artist_song_path(@art, song), class: "ui blue button"%> 
       <%= link_to 'Delete Song', artist_song_path(@art, song), method: :delete, class: "ui red button" %>
+      <%= link_to 'Add Song To Billboard', artist_song_path(@art, song), class: "ui purple button" %>
+
     </span>
   <% end %>
 </ol>

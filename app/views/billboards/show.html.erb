@@ -1,12 +1,24 @@
 <h1 class="ui header"><%= @bill.billboard_name %></h1>
-<% @songlist = [] %>
 
-<% 100.times do  %>
-    <% @songlist << Song.find(rand(1..1250)) %>
-<% end %>
+<h4>Still working on this...</h4>
+
+
+
+
+
+
+
+
+
+
+<%# @songlist = [] %>
+
+<%# 100.times do  %>
+    <%#@songlist << Song.find(rand(1..1250)) %>
+<%# end %>
 
 <ol>
-  <% @songlist.each do |song| %>
-    <li><%= song.song_title  %> by <%= Artist.find(song.artist_id).artist_name %></li>
-  <% end %>
+  <%# @songlist.each do |song| %>
+    <li><%#song.song_title  %> by <%# Artist.find(song.artist_id).artist_name %></li>
+  <%#end %>
 </ol>

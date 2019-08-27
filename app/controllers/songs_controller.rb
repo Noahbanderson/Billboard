@@ -12,6 +12,7 @@ class SongsController < ApplicationController
 
   def new
     @song = @art.songs.new
+    render :template => "songs/_form"
   end
 
   def create
@@ -25,7 +26,7 @@ class SongsController < ApplicationController
   end
   
   def edit
-    
+    render :template => "songs/_form"
   end
 
   def update
@@ -44,7 +45,7 @@ class SongsController < ApplicationController
   private
 
   def set_artist
-    @art = Artist.find(params[:artist_id])
+    @art = current_user.artists.find(params[:artist_id])
   end
 
   def set_song

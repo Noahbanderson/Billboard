@@ -9,10 +9,17 @@ end
     bill = Billboard.create(billboard_name: "Top 100 #{Faker::Music.genre} Songs")
 end
 
-# 100.times do bill.songs.create(song_title: Faker::Music::Phish.song)
+
+
+# country_list = [
+#   [ "Germany", 81831000 ],
+#   [ "France", 65447374 ],
+#   [ "Belgium", 10839905 ],
+#   [ "Netherlands", 16680000 ]
+# ]
+
+# country_list.each do |name, population|
+#   Country.create( name: name, population: population )
 # end
-
-
-
 
 

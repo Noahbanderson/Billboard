@@ -1,18 +1,19 @@
 class BillboardsController < ApplicationController
   before_action :set_billb, only: [:show, :edit, :destroy, :update]
   def index
-    @bills = Billboard.all
+    @bills = current_user.billboards
   end
 
   def show
   end
 
   def new
-    @billboard = Billboard.new
+    @bill = current_user.billboards.new
+    render :template => 'billboards/_form'
   end
 
   def create
-    @bill = Billboard.new(bill_params)
+    @bill = current_user.billboards.new(bill_params)
 
     if @bill.save
       redirect_to billboards_path
@@ -22,6 +23,7 @@ class BillboardsController < ApplicationController
   end
   
   def edit
+    render :template => 'billboards/_form'
   end
 
   def update
@@ -40,7 +42,7 @@ class BillboardsController < ApplicationController
   private
   
   def set_billb
-    @bill = Billboard.find(params[:id])
+    @bill = current_user.billboards.find(params[:id])
   end
 
   def bill_params
